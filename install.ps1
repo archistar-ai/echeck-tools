@@ -1,8 +1,9 @@
 # Check if the OS is Windows
-#if ($IsWindows) {
+#if ($IsWindows) 
+#{
 #    # Check if the script is running with admin privileges
 #    $IsAdmin = [Security.Principal.WindowsPrincipal]([Security.Principal.WindowsIdentity]::GetCurrent())
-#   $AdminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
+#    $AdminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
 #
 #    # If not running as admin, restart the script as admin
 #    if (-not $IsAdmin.IsInRole($AdminRole)) {
@@ -18,18 +19,23 @@
 #    Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 #}
 
-if ($IsWindows) {  # For Windows
+if ($IsWindows) # For Windows
+{
+    Write-Host "Running on Windows!"
+
     $UserModulePath = [System.Environment]::GetFolderPath('MyDocuments') + "\WindowsPowerShell\Modules"
     $UserModulePath
 
-    Copy-Item -Path "./pwsh/Modules/*" -Destination $UserModulePath -Recurse -Force
+    Copy-Item -Path "pwsh/Modules/*" -Destination $UserModulePath -Recurse -Force
     Import-Module ArchiNuGetClean -Force
+} 
+elseif ($IsLinux -or $IsMacOS) # For Linux or macOS    
+{
+    Write-Host "Running on MacOS/Linux!"
 
-
-} elseif ($IsLinux -or $IsMacOS) {  # For Linux or macOS    
     $UserModulePath = [System.Environment]::GetFolderPath('UserProfile') + "/.local/share/powershell/Modules"
     $UserModulePath
 
-    Copy-Item -Path "./pwsh/Modules/*" -Destination $UserModulePath -Recurse -Force
+    Copy-Item -Path "pwsh/Modules/*" -Destination $UserModulePath -Recurse -Force
     Import-Module ArchiNuGetClean -Force
 }
