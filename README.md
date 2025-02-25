@@ -17,13 +17,9 @@ $repo="https://github.com/archistar-ai/echeck-tools.git"; $temp="~/echeck-tools-
 ```
 
 ## ArchiNuGetClean
-```
-"ArchiNuGetClean" is a powerful PowerShell command allows you to clean your current ECheck development packages easily and efficiently without remembering what needs to be done.
-```
+> "ArchiNuGetClean" is a powerful PowerShell command allows you to clean your current ECheck development packages easily and efficiently without remembering what needs to be done.
 
 ## VS 2022 Coding Templates
 
 #### TemplateCustomOperation
-```
-"TemplateCustomOperation" helps you to setup your new ECheck Custom Operation quickly and with the standards we recommend.
-```
+> "TemplateCustomOperation" helps you to setup your new ECheck Custom Operation quickly and with the standards we recommend.
