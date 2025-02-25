@@ -1,0 +1,18 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Blank ECheck Custom Operation</Name>
+    <Description>Adds a new folder with the CustomOperation (it will add word Operation automatically) and it's Request classes...</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>Icon.png</Icon>
+    <DefaultName>CreateElements</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+  <TemplateContent> 
+    <ProjectItem TargetFileName="$fileinputname$Operation\$fileinputname$Operation_latest.cs" ReplaceParameters="true">
+      TemplateOperation.cs
+    </ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$Operation\$fileinputname$Request.cs" ReplaceParameters="true">
+      TemplateRequest.cs
+    </ProjectItem>
+  </TemplateContent>
+</VSTemplate>
