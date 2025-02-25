@@ -1,4 +1,4 @@
-# Echeck Tools
+# ECheck Dev Tools
 echeck-tools - public repo with the tools to support coding echeck customizations
 
 ## Install
