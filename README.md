@@ -3,13 +3,7 @@ echeck-tools - public repo with the tools to support coding echeck customization
 
 ## Run following command in your powershell
 
-### Windows
+### Windows / Linux / MacOS
 ```
-$repo="https://github.com/archistar-ai/echeck-tools.git"; $temp="/tmp/echecktools-cloned"; git clone $repo $temp; Write-Host $temp; pwsh -NoProfile -ExecutionPolicy Bypass -File "$temp/install.ps1"; Remove-Item -Recurse -Force $temp
+$repo="https://github.com/archistar-ai/echeck-tools.git"; $temp="~/echeck-tools-cloned"; git clone $repo $temp; Write-Host $temp; cd $temp; pwsh -NoProfile -ExecutionPolicy Bypass -File "install.ps1"; cd ~; Remove-Item -Recurse -Force $temp
 ```
-
-### Linux / MacOS
-```
-$repo="https://github.com/archistar-ai/echeck-tools.git"; $temp="/tmp/echecktools-cloned"; git clone $repo $temp; Write-Host $temp; pwsh -NoProfile -ExecutionPolicy Bypass -File "$temp/install.ps1"; Remove-Item -Recurse -Force $temp
-```
-
