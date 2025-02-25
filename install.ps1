@@ -26,7 +26,7 @@ if ($IsWindows) # For Windows
     $UserModulePath = [System.Environment]::GetFolderPath('MyDocuments') + "\WindowsPowerShell\Modules"
     $UserModulePath
 
-    Copy-Item -Path "pwsh/Modules/*" -Destination $UserModulePath -Recurse -Force
+    Copy-Item -Path "./pwsh/Modules/*" -Destination $UserModulePath -Recurse -Force
     Import-Module ArchiNuGetClean -Force
 } 
 elseif ($IsLinux -or $IsMacOS) # For Linux or macOS    
@@ -36,6 +36,6 @@ elseif ($IsLinux -or $IsMacOS) # For Linux or macOS
     $UserModulePath = [System.Environment]::GetFolderPath('UserProfile') + "/.local/share/powershell/Modules"
     $UserModulePath
 
-    Copy-Item -Path "pwsh/Modules/*" -Destination $UserModulePath -Recurse -Force
+    Copy-Item -Path "./pwsh/Modules/*" -Destination $UserModulePath -Recurse -Force
     Import-Module ArchiNuGetClean -Force
 }
