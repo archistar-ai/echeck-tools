@@ -21,11 +21,23 @@
 
 $UserFolder
 
-if ($HOME) {
+if ($HOME) 
+{
     $UserFolder = $HOME
-} elseif ($env:USERPROFILE) {
+} 
+elseif ($env:USERPROFILE) 
+{
     $UserFolder = $env:USERPROFILE
 }
+
+#$ProfileExists = Test-Path $PROFILE
+#
+#if (ProfileExists -eq False)
+#{
+#    New-Item -ItemType File -Path $PROFILE -Force
+#}
+#
+#Set-Alias mycmd Get-Process
 
 if ($IsWindows) # For Windows
 {
@@ -44,8 +56,24 @@ if ($IsWindows) # For Windows
     $VS2022ItemTemplatesPathExists = ($VS2022ItemTemplatesPath) -and (Test-Path -Path $VS2022ItemTemplatesPath)
 
     if ($VS2022ItemTemplatesPathExists) {
-        Write-Host "Copying Item Templates VS2022 > $VS2022ItemTemplatesPath"
+        Write-Host "Copying Item Templates VS2022 (Found) > $VS2022ItemTemplatesPath"
         Copy-Item -Path "./vs-templates/item-templates/*.zip" -Destination $VS2022ItemTemplatesPath -Recurse -Force     
+    }
+
+    $VS2019ItemTemplatesPath = "$UserFolder\Documents\Visual Studio 2019\Templates\ItemTemplates"
+    $VS2019ItemTemplatesPathExists = ($VS2019ItemTemplatesPath) -and (Test-Path -Path $VS2019ItemTemplatesPath)
+
+    if ($VS2019ItemTemplatesPathExists) {
+        Write-Host "Copying Item Templates VS2019 (Found) > $VS2019ItemTemplatesPath"
+        Copy-Item -Path "./vs-templates/item-templates/*.zip" -Destination $VS2019ItemTemplatesPath -Recurse -Force     
+    }
+
+    $VS2017ItemTemplatesPath = "$UserFolder\Documents\Visual Studio 2017\Templates\ItemTemplates"
+    $VS2017ItemTemplatesPathExists = ($VS2017ItemTemplatesPath) -and (Test-Path -Path $VS2017ItemTemplatesPath)
+
+    if ($VS2017ItemTemplatesPathExists) {
+        Write-Host "Copying Item Templates VS2017 (Found) > $VS2017ItemTemplatesPath"
+        Copy-Item -Path "./vs-templates/item-templates/*.zip" -Destination $VS2017ItemTemplatesPath -Recurse -Force     
     }
 } 
 elseif ($IsLinux -or $IsMacOS) # For Linux or macOS    
