@@ -1,6 +1,7 @@
 using ECheck.Core.Abstraction.Attributes;
 using ECheck.Core.Logic.ModelEnrichmentCustom.Enums;
 using ECheck.Core.Logic.ModelEnrichmentCustom.ModelEnrichmentCustomOperations;
+using ArchiSharp.Core.Extensions.GeometryExtensions;
 
 namespace $rootnamespace$
 {

@@ -1,5 +1,6 @@
 using System;
 using Microsoft.Extensions.Logging;
+using ArchiSharp.Core.Extensions.GeometryExtensions;
 using ECheck.Core.Abstraction.Attributes;
 using ECheck.Core.Logic.ModelEnrichmentCustom.ModelEnrichmentCustomOperations;
 using ECheck.Core.Models.Objects;
